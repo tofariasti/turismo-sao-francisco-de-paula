@@ -601,14 +601,17 @@ body {
   font-size: 0.95rem;
 }
 
-/* Frota */
+/* Atrações */
 .frota-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 
-.veiculo-card {
+.frota-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
   background: var(--dark-light);
   border-radius: var(--radius);
   overflow: hidden;
@@ -616,83 +619,68 @@ body {
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.veiculo-card:hover {
-  transform: translateY(-8px) rotateX(2deg);
+.frota-card:hover {
+  transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
 }
 
-.veiculo-card__img {
+.frota-card__image {
   position: relative;
   overflow: hidden;
   aspect-ratio: 16/10;
 }
 
-.veiculo-card__img img {
+.frota-card__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
 
-.veiculo-card:hover .veiculo-card__img img {
+.frota-card:hover .frota-card__image img {
   transform: scale(1.08);
 }
 
-.veiculo-card__tag {
+.frota-card__tag {
   position: absolute;
   top: 0.75rem;
   left: 0.75rem;
-  padding: 0.25rem 0.75rem;
-  background: var(--primary);
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(13, 27, 18, 0.88);
   color: var(--white);
-  font-size: 0.75rem;
-  font-weight: 700;
-  border-radius: 999px;
+  font-size: 0.9rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.veiculo-card__body {
+.frota-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   padding: 1.25rem;
 }
 
-.veiculo-card__body h3 {
+.frota-card__body h3 {
   font-family: 'Rajdhani', sans-serif;
   font-size: 1.25rem;
   color: var(--white);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
-.veiculo-specs {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-  font-size: 0.85rem;
+.frota-card__body p {
   color: var(--gray);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex: 1;
 }
 
-.veiculo-specs i {
-  color: var(--primary);
-  margin-right: 0.25rem;
-}
-
-.veiculo-card__footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.veiculo-price {
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary);
-}
-
-.veiculo-price small {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--gray);
+.frota-card__body .btn {
+  align-self: flex-start;
 }
 
 /* Diferenciais */
